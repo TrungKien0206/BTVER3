@@ -23,7 +23,8 @@ public class Processor {
             System.out.println("5. Display Everyone");
             System.out.println("6. Find Top Student");
             System.out.println("7. Find Teacher by Department");
-            System.out.println("8. Exit");
+            System.out.println("8. Find Person by ID"); // New option for finding a person by ID
+            System.out.println("9. Exit");
             System.out.print("Your choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -125,7 +126,18 @@ public class Processor {
                     }
                     break;
 
-                case 8:
+                case 8: // New case for finding a person by ID
+                    System.out.print("Enter Person ID to find: ");
+                    String findId = scanner.nextLine();
+                    Person foundPerson = personList.findPersonById(findId);
+                    if (foundPerson != null) {
+                        foundPerson.displayInfo();
+                    } else {
+                        System.out.println("Person not found.");
+                    }
+                    break;
+
+                case 9:
                     running = false;
                     break;
 

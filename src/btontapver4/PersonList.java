@@ -69,7 +69,15 @@ class PersonList {
             person.displayInfo();
         }
     }
-
+    public Person findPersonByID(String id) {
+        for (Person person : personList) {
+            if (person.getId().equals(id)) {
+                return person;
+            }
+        }
+        return null;
+    }
+    
     public Student findTopStudent() {
         Student topStudent = null;
         for (Person person : personList) {
